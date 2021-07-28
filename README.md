@@ -6,3 +6,6 @@ Open Redragon drivers for Linux.
 | Device | Stage |
 |---|---|
 | Redragon M607 Griffin | WIP |
+
+## Sources
+"Linux Device Drivers"
