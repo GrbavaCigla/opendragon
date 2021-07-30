@@ -1,5 +1,5 @@
 ifneq ($(KERNELRELEASE),)
-	obj-m := hello-world.o
+	obj-m := opendragon.o
 else
 	KERNELDIR ?= /lib/modules/$(shell uname -r)/build
 	PWD  := $(shell pwd)

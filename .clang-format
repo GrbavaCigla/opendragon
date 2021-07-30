@@ -1,0 +1,11 @@
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterEnum: false
+  AfterStruct: false
+  SplitEmptyFunction: false
+IndentWidth: 4
+ColumnLimit: 0
+SortIncludes: false
+BinPackArguments: false
+BinPackParameters: false
+AlignAfterOpenBracket: Align
