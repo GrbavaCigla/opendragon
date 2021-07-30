@@ -10,6 +10,6 @@ Open Redragon drivers for Linux.
 
 ## Sources
 
-Book "Linux Device Drivers, Third Edition" by Jonathan Corbet, Alessandro Rubini and Greg Kroah-Hartman
-OpenRazer source code
-Linux source code
+Book "Linux Device Drivers, Third Edition" by Jonathan Corbet, Alessandro Rubini and Greg Kroah-Hartman  
+OpenRazer source code  
+Linux source code  
