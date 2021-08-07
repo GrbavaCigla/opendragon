@@ -3,7 +3,7 @@ BUILD_DIR ?= build
 BUILD_DIR_MAKEFILE ?= $(PWD)/build/Makefile
 
 default: $(BUILD_DIR_MAKEFILE)
-	make -C $(KDIR) M=$(PWD)/$(BUILD_DIR) src=$(PWD) modules
+	$(MAKE) -C $(KDIR) M=$(PWD)/$(BUILD_DIR) src=$(PWD) modules
 
 $(PWD)/$(BUILD_DIR):
 	mkdir -p "$@"
@@ -12,7 +12,7 @@ $(BUILD_DIR_MAKEFILE): $(PWD)/$(BUILD_DIR)
 	touch "$@"
 
 clean:
-	make -C $(KDIR) M=$(PWD)/$(BUILD_DIR) src=$(PWD) clean
+	$(MAKE) -C $(KDIR) M=$(PWD)/$(BUILD_DIR) src=$(PWD) clean
 
 
 load:
