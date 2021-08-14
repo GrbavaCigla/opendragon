@@ -9,7 +9,14 @@
 #include <linux/stat.h>
 
 #include "report.h"
-#include "functions/light_modes.h"
 
 #define REDRAGON_VENDOR_ID 0x04d9
 #define REDRAGON_M607_PRODUCT_ID 0xfc38
+
+#define DATA_LENGTH 16
+
+typedef struct {
+    unsigned char r;
+    unsigned char g;
+    unsigned char b;
+} rgb_t;

@@ -1,4 +1,5 @@
 #include "opendragon.h"
+#include "functions/light_modes.h"
 
 MODULE_AUTHOR("Aleksa Ognjanovic <alexa.ognjanovic@protonmail.com>");
 MODULE_DESCRIPTION("Driver for Redragon mouses (currently only M607)");

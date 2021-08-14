@@ -10,8 +10,20 @@
 #include <linux/uaccess.h>
 #include <linux/usb/input.h>
 
+#include "../opendragon.h"
 #include "../report.h"
+
+typedef enum {
+    LIGHT_MODE_BREATHING,
+    LIGHT_MODE_RAINBOW,
+    LIGHT_MODE_FULL_LIGHTED,
+    LIGHT_MODE_WAVE,
+    LIGHT_MODE_GO_WITHOUT_TRACE,
+    LIGHT_MODE_REACTIVE,
+    LIGHT_MODE_FLASH,
+    LIGHT_MODE_OFF,
+} light_mode_e;
 
 ssize_t dev_attr_write_light_mode(struct device *dev, struct device_attribute *attr, const char *buf, size_t count);
 
-int set_light_mode(struct usb_device *dev, unsigned short mode, unsigned short brightness, unsigned short speed);
+int set_light_mode(struct usb_device *dev, light_mode_e mode, rgb_t color, unsigned short brightness, unsigned short speed);

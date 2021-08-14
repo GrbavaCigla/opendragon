@@ -1,15 +1,57 @@
 # OpenDragon
 
-Open Redragon drivers for Linux.
+Open Redragon drivers for Linux. Currently only supporting some mice.
+
+## Table of contents
+
+1. [Support](#support)
+2. [Installation](#installation)
+   1. [Building from source](#building-from-source)
+3. [Known issues](#known-issues)
+4. [Contributing](#contributing)
 
 ## Support
 
-| Device                | Stage |
-| --------------------- | ----- |
-| Redragon M607 Griffin | WIP   |
+| Device                       | Stage | Light | General | DPI |
+| ---------------------------- | ----- | ----- | ------- | --- |
+| Redragon M607 Griffin        | WIP   | ✔️    | ❌      | ❌  |
+| Redragon M601-3 Centrophorus | WIP   | ❌    | ❌      | ❌  |
+
+## Installation
+
+Currently, it is not possible to install without building from source.
+
+### Building from source
+
+```
+$ make
+```
+
+Loading the module
+
+```
+# make load
+```
+
+Unloading the module
+
+```
+# make unload
+```
+
+or
+
+```
+# rmmod opendragon
+```
+
+## Known issues
+
+- Driver occupies all three HID interfaces (mouse, keyboard and generic), but should only occupy generic. This leads to mouse not responding to movements or keypresses.
+- Breathing lighting mode doesn't seem to work
 
 ## Sources
 
-Book "Linux Device Drivers, Third Edition" by Jonathan Corbet, Alessandro Rubini and Greg Kroah-Hartman  
-OpenRazer source code  
-Linux source code  
+- Book "Linux Device Drivers, Third Edition" by Jonathan Corbet, Alessandro Rubini and Greg Kroah-Hartman
+- https://github.com/openrazer/openrazer
+- https://github.com/dokutan/mouse_m908
