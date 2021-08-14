@@ -8,8 +8,8 @@ Open Redragon drivers for Linux. Currently only supporting some mice.
 2. [Installation](#installation)
    1. [Building from source](#building-from-source)
 3. [Usage](#usage)
-3. [Known issues](#known-issues)
-4. [Contributing](#contributing)
+4. [Known issues](#known-issues)
+5. [Contributing](#contributing)
 
 ## Support
 
@@ -17,6 +17,7 @@ Open Redragon drivers for Linux. Currently only supporting some mice.
 | ---------------------------- | ----- | ----- | ------- | --- |
 | Redragon M607 Griffin        | WIP   | ✔️    | ❌      | ❌  |
 | Redragon M601-3 Centrophorus | WIP   | ❌    | ❌      | ❌  |
+| Redragon M909 Emperor        | WIP   | ❌    | ❌      | ❌  |
 
 ## Installation
 
@@ -47,8 +48,10 @@ or
 ```
 
 ## Usage
+
 To set lighting mode, you can send data manually or through [GUI application](https://github.com/GrbavaCigla/opendragui)
 Sending data manually:
+
 ```
 # echo -n "[mode] [red] [green] [blue] [speed] [brightness]" > /sys/bus/hid/devices/XXXX:XXXX:XXXX.XXXX/light_mode
 ```
