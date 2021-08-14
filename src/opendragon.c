@@ -5,7 +5,7 @@ MODULE_AUTHOR("Aleksa Ognjanovic <alexa.ognjanovic@protonmail.com>");
 MODULE_DESCRIPTION("Driver for Redragon mouses (currently only M607)");
 MODULE_LICENSE("GPL");
 
-DEVICE_ATTR(light_mode, S_IRUGO | S_IWUSR, NULL, dev_attr_write_light_mode);
+DEVICE_ATTR(light_mode, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP, NULL, dev_attr_write_light_mode);
 
 
 static int redragon_probe(struct hid_device *hdev,

@@ -45,10 +45,18 @@ or
 # rmmod opendragon
 ```
 
+## Usage
+To set lighting mode, you can send data manually or through [GUI application](https://github.com/GrbavaCigla/opendragui)
+Sending data manually:
+```
+# echo -n "[mode] [red] [green] [blue] [speed] [brightness]" > /sys/bus/hid/devices/XXXX:XXXX:XXXX.XXXX/light_mode
+```
+
 ## Known issues
 
 - Driver occupies all three HID interfaces (mouse, keyboard and generic), but should only occupy generic. This leads to mouse not responding to movements or keypresses.
 - Breathing lighting mode doesn't seem to work
+- Undefined behaviour everywhere
 
 ## Sources
 
