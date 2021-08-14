@@ -2,7 +2,7 @@
 #include "functions/light_modes.h"
 
 MODULE_AUTHOR("Aleksa Ognjanovic <alexa.ognjanovic@protonmail.com>");
-MODULE_DESCRIPTION("Driver for Redragon mouses (currently only M607)");
+MODULE_DESCRIPTION("Open Redragon drivers for Linux. Currently only supporting some mice.");
 MODULE_LICENSE("GPL");
 
 DEVICE_ATTR(light_mode, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP, NULL, dev_attr_write_light_mode);
