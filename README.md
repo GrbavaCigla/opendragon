@@ -13,11 +13,11 @@ Open Redragon drivers for Linux. Currently only supporting some mice.
 
 ## Support
 
-| Device                       | Stage | Light | General | DPI |
-| ---------------------------- | ----- | ----- | ------- | --- |
-| Redragon M607 Griffin        | WIP   | ✔️    | ❌      | ❌  |
-| Redragon M601-3 Centrophorus | WIP   | ❌    | ❌      | ❌  |
-| Redragon M909 Emperor        | WIP   | ❌    | ❌      | ❌  |
+| Device                       | Stage | Light | General | DPI | Notes                                     |
+| ---------------------------- | ----- | ----- | ------- | --- | ----------------------------------------- |
+| Redragon M607 Griffin        | WIP   | ✔️    | ❌      | ❌  | - For some reason, breathing doesn't work |
+| Redragon M909 Emperor        | WIP   | ✔️    | ❌      | ❌  | - For some reason, breathing doesn't work |
+| Redragon M601-3 Centrophorus | WIP   | ❌    | ❌      | ❌  |                                           |
 
 ## Installation
 
@@ -53,14 +53,28 @@ To set lighting mode, you can send data manually or through [GUI application](ht
 Sending data manually:
 
 ```
-# echo -n "[mode] [red] [green] [blue] [speed] [brightness]" > /sys/bus/hid/devices/XXXX:XXXX:XXXX.XXXX/light_mode
+# echo -n "[mode] [red] [green] [blue] [brightness] [speed]" > /sys/bus/hid/devices/XXXX:YYYY:ZZZZ.XXXX/light_mode
+```
+Where:
+- mode is number from 0 to 7 (Breathing, Rainbow, Full lighted, Wave, Go without trace, Reactive, Flash, Off)
+- red is number from 0 to 255, red channel
+- green is number from 0 to 255, green channel
+- blue is number from 0 to 255, blue channel
+- brightness is number from 0 to 2
+- speed is number from 0 to 8
+- YYYY is vendor id
+- ZZZZ is product id
+
+Examples:
+```
+# echo -n "3 255 255 255 2 0" > /sys/bus/hid/devices/XXXX:XXXX:XXXX.XXXX/light_mode
 ```
 
 ## Known issues
 
 - Driver occupies all three HID interfaces (mouse, keyboard and generic), but should only occupy generic. This leads to mouse not responding to movements or keypresses.
-- Breathing lighting mode doesn't seem to work
-- Undefined behaviour everywhere
+- Breathing light mode doesn't seem to work
+- Undefined behaviour everywhere and lack of logging
 
 ## Sources
 
