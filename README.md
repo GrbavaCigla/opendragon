@@ -9,7 +9,7 @@ Open Redragon drivers for Linux. Currently only supporting some mice.
    1. [Building from source](#building-from-source)
 3. [Usage](#usage)
 4. [Known issues](#known-issues)
-5. [Contributing](#contributing)
+5. [Sources](#sources)
 
 ## Support
 
