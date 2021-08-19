@@ -12,6 +12,7 @@ DEVICE_ATTR(profile, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP, NULL, dev_attr_write
 
 static int redragon_probe(struct hid_device *hdev,
                           const struct hid_device_id *id) {
+    printk(KERN_INFO "opendragon: Module probed");
 
     device_create_file(&hdev->dev, &dev_attr_light_mode);
     device_create_file(&hdev->dev, &dev_attr_profile);
@@ -20,6 +21,8 @@ static int redragon_probe(struct hid_device *hdev,
 }
 
 static void redragon_disconnect(struct hid_device *hdev) {
+    printk(KERN_INFO "opendragon: Module disconnected");
+
     device_remove_file(&hdev->dev, &dev_attr_light_mode);
     device_remove_file(&hdev->dev, &dev_attr_profile);
 }

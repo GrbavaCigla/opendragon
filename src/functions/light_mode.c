@@ -3,6 +3,7 @@
 ssize_t dev_attr_write_light_mode(struct device *dev, struct device_attribute *attr, const char *buf, size_t count) {
     struct usb_interface *interface = to_usb_interface(dev->parent);
     struct usb_device *usb_dev = interface_to_usbdev(interface);
+    int res;
 
     unsigned short mode = DEFAULT_MODE;
     unsigned short brightness = DEFAULT_BRIGHTNESS;
@@ -13,9 +14,13 @@ ssize_t dev_attr_write_light_mode(struct device *dev, struct device_attribute *a
         .b = DEFAULT_BLUE,
     };
 
-    sscanf(buf, "%hu %hhu %hhu %hhu %hu %hu", &mode, &color.r, &color.g, &color.b, &brightness, &speed);
+    res = sscanf(buf, "%hu %hhu %hhu %hhu %hu %hu", &mode, &color.r, &color.g, &color.b, &brightness, &speed);
+    if (res < 6) {
+        printk(KERN_INFO "opendragon: Only %d arguments valid, using default values", res);
+    }
 
-    set_light_mode(usb_dev, mode, color, brightness, speed);
+    res = set_light_mode(usb_dev, mode, color, brightness, speed);
+    printk(KERN_INFO "opendragon: Setting light mode returned status code %d", res);
 
     return (ssize_t)count;
 }

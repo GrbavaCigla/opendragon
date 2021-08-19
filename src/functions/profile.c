@@ -3,12 +3,17 @@
 ssize_t dev_attr_write_profile(struct device *dev, struct device_attribute *attr, const char *buf, size_t count) {
     struct usb_interface *interface = to_usb_interface(dev->parent);
     struct usb_device *usb_dev = interface_to_usbdev(interface);
+    int res;
 
     unsigned char profile_num = 0x00; // Default value
 
     sscanf(buf, "%hhu", &profile_num);
+    if (res < 1) {
+        printk(KERN_INFO "opendragon: Only %d arguments valid, using default values", res);
+    }
 
-    set_profile(usb_dev, profile_num);
+    res = set_profile(usb_dev, profile_num);
+    printk(KERN_INFO "opendragon: Setting profile returned status code %d", res);
 
     return (ssize_t)count;
 }

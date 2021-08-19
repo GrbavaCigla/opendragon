@@ -13,11 +13,11 @@ Open Redragon drivers for Linux. Currently only supporting some mice.
 
 ## Support
 
-| Device                       | Stage | Light | General | DPI | Notes                                       |
-| ---------------------------- | ----- | ----- | ------- | --- | ------------------------------------------- |
-| Redragon M607 Griffin        | WIP   | ✔️    | partial | ❌  | - Only switching profiles work from general |
-| Redragon M909 Emperor        | WIP   | ✔️    | partial | ❌  | - Only switching profiles work from general |
-| Redragon M601-3 Centrophorus | WIP   | ❌    | ❌      | ❌  |                                             |
+| Device                           | Stage | Light | General | DPI | Notes                                       |
+| -------------------------------- | ----- | ----- | ------- | --- | ------------------------------------------- |
+| Redragon M607 Griffin (M602-RGB) | WIP   | ✔️    | partial | ❌  | - Only switching profiles work from general |
+| Redragon M909 Emperor            | WIP   | ✔️    | partial | ❌  | - Only switching profiles work from general |
+| Redragon M601-3 Centrophorus     | WIP   | ❌    | ❌      | ❌  |                                             |
 
 ## Installation
 
@@ -76,7 +76,6 @@ Examples:
 ## Known issues
 
 - Driver occupies all three HID interfaces (mouse, keyboard and generic), but should only occupy generic. This leads to mouse not responding to movements or keypresses.
-- Undefined behaviour everywhere and lack of logging
 
 ## Sources
 
