@@ -49,7 +49,8 @@ or
 
 ## Usage
 
-To change mouse configuration, you can send data manually or through [GUI application](https://github.com/GrbavaCigla/opendragui)
+To change mouse configuration, you can send data manually or through the [GUI application](https://github.com/GrbavaCigla/opendragui)
+
 Sending data manually:
 
 ```
