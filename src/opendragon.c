@@ -14,16 +14,19 @@ static int redragon_probe(struct hid_device *hdev,
                           const struct hid_device_id *id) {
 
     device_create_file(&hdev->dev, &dev_attr_light_mode);
+    device_create_file(&hdev->dev, &dev_attr_profile);
 
     return 0;
 }
 
 static void redragon_disconnect(struct hid_device *hdev) {
     device_remove_file(&hdev->dev, &dev_attr_light_mode);
+    device_remove_file(&hdev->dev, &dev_attr_profile);
 }
 
 static struct hid_device_id device_table[] = {
     {HID_USB_DEVICE(REDRAGON_VENDOR_ID, REDRAGON_M607_PRODUCT_ID)},
+    {HID_USB_DEVICE(REDRAGON_VENDOR_ID, REDRAGON_M909_PRODUCT_ID)},
     {},
 };
 
