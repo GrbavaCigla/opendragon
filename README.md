@@ -13,11 +13,11 @@ Open Redragon drivers for Linux. Currently only supporting some mice.
 
 ## Support
 
-| Device                       | Stage | Light | General | DPI | Notes |
-| ---------------------------- | ----- | ----- | ------- | --- | ----- |
-| Redragon M607 Griffin        | WIP   | ✔️    | ❌      | ❌  |       |
-| Redragon M909 Emperor        | WIP   | ✔️    | ❌      | ❌  |       |
-| Redragon M601-3 Centrophorus | WIP   | ❌    | ❌      | ❌  |       |
+| Device                       | Stage | Light | General | DPI | Notes                                       |
+| ---------------------------- | ----- | ----- | ------- | --- | ------------------------------------------- |
+| Redragon M607 Griffin        | WIP   | ✔️    | partial | ❌  | - Only switching profiles work from general |
+| Redragon M909 Emperor        | WIP   | ✔️    | partial | ❌  | - Only switching profiles work from general |
+| Redragon M601-3 Centrophorus | WIP   | ❌    | ❌      | ❌  |                                             |
 
 ## Installation
 
