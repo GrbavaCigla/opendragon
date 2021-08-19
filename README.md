@@ -49,29 +49,33 @@ or
 
 ## Usage
 
-To set lighting mode, you can send data manually or through [GUI application](https://github.com/GrbavaCigla/opendragui)
+To change mouse configuration, you can send data manually or through [GUI application](https://github.com/GrbavaCigla/opendragui)
 Sending data manually:
 
 ```
 # echo -n "[mode] [red] [green] [blue] [brightness] [speed]" > /sys/bus/hid/devices/XXXX:YYYY:ZZZZ.XXXX/light_mode
+# echo -n "[profile number]" > /sys/bus/hid/devices/XXXX:YYYY:ZZZZ.XXXX/profile
 ```
 
 Where:
 
-- mode is number from 0 to 7 (Breathing, Rainbow, Full lighted, Wave, Go without trace, Reactive, Flash, Off)
-- red is number from 0 to 255, red channel
-- green is number from 0 to 255, green channel
-- blue is number from 0 to 255, blue channel
-- brightness is number from 0 to 2
-- speed is number from 0 to 8
+- mode is a number from 0 to 7 (Breathing, Rainbow, Full lighted, Wave, Go without trace, Reactive, Flash, Off)
+- red is a number from 0 to 255, red channel
+- green is a number from 0 to 255, green channel
+- blue is a number from 0 to 255, blue channel
+- brightness is a number from 0 to 2
+- speed is a number from 0 to 8
 - YYYY is vendor id
 - ZZZZ is product id
+- XXXX is interface number
 
-Examples:
+Example:
 
 ```
-# echo -n "3 255 255 255 2 0" > /sys/bus/hid/devices/XXXX:XXXX:XXXX.XXXX/light_mode
+# echo -n "2" > /sys/bus/hid/devices/0003:04D9:FC38.0003/light_mode
+# echo -n "3 255 255 255 2 0" > /sys/bus/hid/devices/0003:04D9:FC38.0003/light_mode
 ```
+This will switch to profile 3 (starting from zero) and change light mode to wave with brightness of 2 and speed of 0
 
 ## Known issues
 
