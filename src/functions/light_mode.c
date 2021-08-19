@@ -42,8 +42,13 @@ int set_light_mode(struct usb_device *dev, light_mode_e mode, rgb_t color, unsig
         unsigned char lmodes[] = {0x02, 0x03, 0x01, 0x05, 0xff, 0xff, 0x04, 0x00};
 
         lmode = lmodes[mode];
+    }
+        if (mode == LIGHT_MODE_GO_WITHOUT_TRACE || mode == LIGHT_MODE_REACTIVE) {
+            printk(KERN_ERR "opendragon: M909 doesn't support modes 4 \"Go without trace\" and 5 \"Reactive\"");
+            return -EINVAL;
+        }
         umode = 0x01;
-    } break;
+        break;
     }
 
     // clang-format off

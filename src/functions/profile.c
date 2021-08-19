@@ -7,7 +7,7 @@ ssize_t dev_attr_write_profile(struct device *dev, struct device_attribute *attr
 
     unsigned char profile_num = 0x00; // Default value
 
-    sscanf(buf, "%hhu", &profile_num);
+    res = sscanf(buf, "%hhu", &profile_num);
     if (res < 1) {
         printk(KERN_INFO "opendragon: Only %d arguments valid, using default values", res);
     }
