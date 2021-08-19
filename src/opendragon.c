@@ -1,11 +1,13 @@
 #include "opendragon.h"
-#include "functions/light_modes.h"
+#include "functions/light_mode.h"
+#include "functions/profile.h"
 
 MODULE_AUTHOR("Aleksa Ognjanovic <alexa.ognjanovic@protonmail.com>");
 MODULE_DESCRIPTION("Open Redragon drivers for Linux. Currently only supporting some mice.");
 MODULE_LICENSE("GPL");
 
 DEVICE_ATTR(light_mode, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP, NULL, dev_attr_write_light_mode);
+DEVICE_ATTR(profile, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP, NULL, dev_attr_write_profile);
 
 
 static int redragon_probe(struct hid_device *hdev,

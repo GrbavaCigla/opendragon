@@ -1,4 +1,4 @@
-#include "light_modes.h"
+#include "light_mode.h"
 
 ssize_t dev_attr_write_light_mode(struct device *dev, struct device_attribute *attr, const char *buf, size_t count) {
     struct usb_interface *interface = to_usb_interface(dev->parent);
