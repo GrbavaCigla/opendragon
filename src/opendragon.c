@@ -9,19 +9,31 @@ MODULE_LICENSE("GPL");
 DEVICE_ATTR(light_mode, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP, NULL, dev_attr_write_light_mode);
 DEVICE_ATTR(profile, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP, NULL, dev_attr_write_profile);
 
-
 static int redragon_probe(struct hid_device *hdev,
                           const struct hid_device_id *id) {
     struct usb_interface *interface = to_usb_interface(hdev->dev.parent);
+    int ret;
 
     printk(KERN_INFO "opendragon: Module probed");
 
     // if (interface->cur_altsetting->desc.bInterfaceProtocol == 0) {
+    // }
     device_create_file(&hdev->dev, &dev_attr_light_mode);
     device_create_file(&hdev->dev, &dev_attr_profile);
-    // }
 
-    return 0;
+    ret = hid_parse(hdev);
+    if (ret) {
+        printk(KERN_ERR "opendragon: Failed to parse HID device");
+        return ret;
+    }
+
+    ret = hid_hw_start(hdev, HID_CONNECT_DEFAULT);
+    if (ret) {
+        printk(KERN_ERR "opendragon: Failed to start HID device");
+        return ret;
+    }
+
+    return ret;
 }
 
 static void redragon_disconnect(struct hid_device *hdev) {
@@ -29,6 +41,8 @@ static void redragon_disconnect(struct hid_device *hdev) {
 
     device_remove_file(&hdev->dev, &dev_attr_light_mode);
     device_remove_file(&hdev->dev, &dev_attr_profile);
+
+    hid_hw_stop(hdev);
 }
 
 static struct hid_device_id device_table[] = {

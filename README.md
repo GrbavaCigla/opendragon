@@ -78,10 +78,6 @@ Example:
 ```
 This will switch to profile 3 (starting from zero) and change light mode to wave with brightness of 2 and speed of 0
 
-## Known issues
-
-- Driver occupies all three HID interfaces (mouse, keyboard and generic), but should only occupy generic. This leads to mouse not responding to movements or keypresses.
-
 ## Sources
 
 - Book "Linux Device Drivers, Third Edition" by Jonathan Corbet, Alessandro Rubini and Greg Kroah-Hartman
