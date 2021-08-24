@@ -87,3 +87,4 @@ This will switch to profile 3 (starting from zero) and change light mode to wave
 - Book "Linux Device Drivers, Third Edition" by Jonathan Corbet, Alessandro Rubini and Greg Kroah-Hartman
 - https://github.com/openrazer/openrazer
 - https://github.com/dokutan/mouse_m908
+- http://reactivated.net/writing_udev_rules.html

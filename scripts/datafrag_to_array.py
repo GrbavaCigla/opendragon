@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from sys import argv, exit
 
 if len(argv) < 2:
@@ -10,4 +11,3 @@ array = [inp[i - 1] + inp[i] for i in range(1, len(inp), 2)]
 
 formatted = "unsigned char data[] = {0x" + ", 0x".join(array) + "};"
 print(formatted)
-
