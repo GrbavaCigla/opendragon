@@ -1,1 +1,1 @@
-SUBSYSTEM=="hid", ATTRS{idProduct}=="FC38", ATTRS{idVendor}=="04D9", GROUP:="plugdev"
+SUBSYSTEM=="hid", ATTRS{idProduct}=="fc38", ATTRS{idVendor}=="04d9", GROUP:="plugdev"
