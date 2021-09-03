@@ -30,3 +30,21 @@ typedef struct {
     unsigned char g;
     unsigned char b;
 } rgb_t;
+
+typedef enum {
+    LIGHT_MODE_BREATHING,
+    LIGHT_MODE_RAINBOW,
+    LIGHT_MODE_FULL_LIGHTED,
+    LIGHT_MODE_WAVE,
+    LIGHT_MODE_GO_WITHOUT_TRACE,
+    LIGHT_MODE_REACTIVE,
+    LIGHT_MODE_FLASH,
+    LIGHT_MODE_OFF,
+} light_mode_e;
+
+typedef struct {
+    light_mode_e light_mode;
+    unsigned char brightness;
+    unsigned char speed;
+    rgb_t color;
+} redragon_drvdata_t;
