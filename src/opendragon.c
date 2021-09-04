@@ -11,7 +11,7 @@ DEVICE_ATTR(profile, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP, NULL, dev_attr_write
 
 static int redragon_probe(struct hid_device *hdev,
                           const struct hid_device_id *id) {
-    redragon_drvdata_t *drvdata;
+    // redragon_drvdata_t *drvdata;
     int ret;
 
     printk(KERN_INFO "opendragon: Module probed");
@@ -19,23 +19,23 @@ static int redragon_probe(struct hid_device *hdev,
     device_create_file(&hdev->dev, &dev_attr_light_mode);
     device_create_file(&hdev->dev, &dev_attr_profile);
 
-    drvdata = devm_kzalloc(&hdev->dev, sizeof(redragon_drvdata_t), GFP_KERNEL);
+    // drvdata = devm_kzalloc(&hdev->dev, sizeof(redragon_drvdata_t), GFP_KERNEL);
 
     ret = hid_parse(hdev);
     if (ret) {
         printk(KERN_ERR "opendragon: Failed to parse HID device");
-        devm_kfree(&hdev->dev, drvdata);
+        // devm_kfree(&hdev->dev, drvdata);
         return ret;
     }
 
     ret = hid_hw_start(hdev, HID_CONNECT_DEFAULT);
     if (ret) {
         printk(KERN_ERR "opendragon: Failed to start HID device");
-        devm_kfree(&hdev->dev, drvdata);
+        // devm_kfree(&hdev->dev, drvdata);
         return ret;
     }
 
-    devm_kfree(&hdev->dev, drvdata);
+    // devm_kfree(&hdev->dev, drvdata);
     return ret;
 }
 
