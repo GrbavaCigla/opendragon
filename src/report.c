@@ -14,17 +14,18 @@ int send_redragon_report(struct usb_device *dev, unsigned char *data, unsigned s
 }
 
 int send_redragon_reports(struct usb_device *dev, unsigned char *data, unsigned short length, unsigned short count) {
-    int i, ret = 0;
+    int i, ret = 0, tret;
 
-    for(i = 0; i < count; i++) {
+    for (i = 0; i < count; i++) {
         unsigned char temp[length];
         int j;
         for (j = 0; j < length; j++) {
             temp[j] = data[i * length + j];
         }
 
-        int tret = send_redragon_report(dev, temp, length);
-        if (tret < 0) ret = tret; 
+        tret = send_redragon_report(dev, temp, length);
+        if (tret < 0)
+            ret = tret;
     }
 
     return ret;
