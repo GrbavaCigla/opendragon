@@ -77,6 +77,14 @@ Example:
 ```
 This will switch to profile 3 (starting from zero) and change light mode to wave with brightness of 2 and speed of 0
 
+## Issues
+- Functions are to big, break them into smaller functions
+- UDEV rule doesn't work and I need help because I am not experienced with it
+
+## Contributing
+Do you have a mouse that is not listed in supported mice? If so, file an issue to github page.  
+If you know how UDEV rules work please make a pull request.
+
 ## Sources
 
 - Book "Linux Device Drivers, Third Edition" by Jonathan Corbet, Alessandro Rubini and Greg Kroah-Hartman
