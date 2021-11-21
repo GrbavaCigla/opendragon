@@ -1,4 +1,5 @@
-# OpenDragon
+# OpenDragon ![Build](https://github.com/GrbavaCigla/opendragon/actions/workflows/build.yml/badge.svg) ![CodeQL](https://github.com/GrbavaCigla/opendragon/actions/workflows/codeql-analysis.yml/badge.svg)
+
 
 Open Redragon drivers for Linux. Currently only supporting some mice.
 
